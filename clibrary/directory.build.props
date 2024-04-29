@@ -1,0 +1,13 @@
+<Project>
+	<PropertyGroup>	
+		<!-- Common properties -->
+		<UseArtifactsOutput>true</UseArtifactsOutput>
+		<ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
+		<AssetsPath>assets\</AssetsPath>
+		<BuildTransitivePath>$(AssetsPath)buildTransitive\</BuildTransitivePath>
+		
+		<!-- Nuget properties -->
+		<LocalNugetSource>$(HOME)\.nuget-local</LocalNugetSource>
+		<RestoreAdditionalProjectSources>$(LocalNugetSource)</RestoreAdditionalProjectSources>
+	</PropertyGroup>
+</Project>

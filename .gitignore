@@ -1,0 +1,6 @@
+__pycache__
+dist
+artifacts
+*.dll
+*.bin
+*.out

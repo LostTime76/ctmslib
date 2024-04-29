@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">	
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<NoPackageAnalysis>true</NoPackageAnalysis>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>IDE0063,IDE0066,IDE0251,IDE0290,IDE1006,SYSLIB1054,CA1401,CA1416,CA1510,CA1859</NoWarn>
+		<AssemblyName>clib</AssemblyName>
+		<PublishAot>true</PublishAot>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ceetemsoft.utils" Version="2.0.0-local"/>
+		<PackageReference Include="system.io.hashing" Version="8.0.0"/>
+	</ItemGroup>
+
+	<Target Name="PostPublish" AfterTargets="Publish">
+		<Copy
+			SourceFiles="$(PublishDir)$(AssemblyName).dll"
+			DestinationFolder="$(MSBuildThisProjectDirectory)..\python\packages\ctmslib\"/>
+	</Target>
+</Project>

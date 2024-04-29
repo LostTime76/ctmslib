@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"problemMatcher":"$msCompile",
+	"presentation": {
+		"echo": false,
+		"reveal": "always",
+		"focus": false,
+		"panel": "dedicated",
+		"showReuseMessage": false,
+		"clear": false
+	},
+	"tasks": [
+	{
+		"label": "Debug Publish",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"publish",
+			"${workspaceFolder}\\clibrary\\clibrary.csproj",
+			"-r", "win-x64",
+			"-c", "Debug"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	},
+	{
+		"label": "Release Publish",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"publish",
+			"${workspaceFolder}\\clibrary\\clibrary.csproj",
+			"-r", "win-x64",
+			"-c", "Release"
+		]
+	},
+	{
+		"label": "Clean",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"clean",
+			"${workspaceFolder}\\clibrary\\clibrary.csproj"
+		]
+	}]
+}
